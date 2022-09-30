@@ -21,5 +21,5 @@ $sLangName = 'Deutsch';
 $aLang = [
     'charset'                             => 'UTF-8',
     'SHOP_MODULE_ecs_main'                => 'Einstellungen',
-    'SHOP_MODULE_ecslocalfontsaktivate'   => 'Google Fonts lokal einbinden (ansonsten nur entfernen)',
+    'SHOP_MODULE_ecslocalfontsaktivate'   => 'Nur Flow-Theme: Google Fonts lokal einbinden (ansonsten nur entfernen)',
 ];

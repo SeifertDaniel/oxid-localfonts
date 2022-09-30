@@ -13,3 +13,13 @@
   *      Bitte kontaktieren Sie info@ecomstyle.de für weitere Informationen.
   *   *********************************************************************************************
   *}]
+
+[{if !isset($oConfig)}]
+    [{assign var="oConfig" value=$oViewConf->getConfig()}]
+[{/if}]
+[{if $oConfig->getConfigParam('ecslocalfontsaktivate')}]
+    [{assign var="moduleurl" value=$oViewConf->getModuleUrl('ecs_localfonts')}]
+    <style>
+        @font-face{font-family:'Raleway';font-style:normal;font-weight:400;src:url('[{$moduleurl}]fonts/raleway-v28-latin-regular.eot');src:local(''),url('[{$moduleurl}]fonts/raleway-v28-latin-regular.eot?#iefix') format('embedded-opentype'),url('[{$moduleurl}]fonts/raleway-v28-latin-regular.woff2') format('woff2'),url('[{$moduleurl}]fonts/raleway-v28-latin-regular.woff') format('woff'),url('[{$moduleurl}]fonts/raleway-v28-latin-regular.ttf') format('truetype'),url('[{$moduleurl}]fonts/raleway-v28-latin-regular.svg#Raleway') format('svg')}
+    </style>
+[{/if}]

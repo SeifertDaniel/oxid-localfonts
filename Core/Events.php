@@ -31,19 +31,12 @@ class Events
     protected static function editCss()
     {
         $oConfig = Registry::getConfig();
-        $oModule = oxNew(\OxidEsales\Eshop\Core\Module\Module::class);
         $moduleurl = $oConfig->getShopUrl() . 'modules/ecs/LocalFonts/';
-
         $srcdir = $oConfig->getResourcePath();
         $cssfile = $srcdir . 'css/styles.min.css';
         $localfonts = "@font-face{font-family:'Raleway';font-style:normal;font-weight:400;src:url('" . $moduleurl . "fonts/raleway-v28-latin-regular.eot');src:local(''),url('" . $moduleurl . "fonts/raleway-v28-latin-regular.eot?#iefix') format('embedded-opentype'),url('" . $moduleurl . "fonts/raleway-v28-latin-regular.woff2') format('woff2'),url('" . $moduleurl . "fonts/raleway-v28-latin-regular.woff') format('woff'),url('" . $moduleurl . "fonts/raleway-v28-latin-regular.ttf') format('truetype'),url('" . $moduleurl . "fonts/raleway-v28-latin-regular.svg#Raleway') format('svg')}";
-
-        $search = ['@import url(https://fonts.googleapis.com/css?family=Raleway:200,400,600,700);', $localfonts];
-        $replace = '';
-
-        if ($oConfig->getConfigParam('ecslocalfontsaktivate')) {
-            $replace = $localfonts;
-        }
+        $search = ['@import url(https://fonts.googleapis.com/css?family=Raleway:200,400,600,700);', "@import url('https://fonts.googleapis.com/css?family=Raleway:200,400,600,700');", $localfonts];
+        $replace = $localfonts;
 
         try {
             $styletext = file_get_contents($cssfile);

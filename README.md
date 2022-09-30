@@ -6,7 +6,7 @@ OXID eShop 6.1 - 6.4 (nur GPL - Versionen!)
 
 ### Features
 
-Google Fonts aus den Oxid Standardthemes Flow und Wave lokal einbinden (Standard) oder ganz entfernen (Option).
+Google Font Raleway aus den Oxid Standardthemes Flow und Wave lokal einbinden.
 
 ### Installation
 
