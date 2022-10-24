@@ -6,7 +6,11 @@ OXID eShop 6.1 - 6.4 (nur GPL - Versionen!)
 
 ### Features
 
-Google Font Raleway aus den Oxid Standardthemes Flow und Wave lokal einbinden.
+Bei Modulaktivierung werden folgende Aktionen durchgeführt:
+
+-   Import der Google Font Raleway von fonts.googleapis.com entfernen.
+-   Google Font Raleway lokal einbinden.
+-   Google Font aus der Datei offline.html entfernen.
 
 ### Installation
 

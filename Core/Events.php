@@ -18,7 +18,6 @@
 namespace Ecs\LocalFonts\Core;
 
 use OxidEsales\Eshop\Core\Registry;
-use OxidEsales\Eshop\Core\DbMetaDataHandler;
 use OxidEsales\Eshop\Core\DatabaseProvider;
 
 class Events
@@ -26,6 +25,23 @@ class Events
     protected static function _moduleID()
     {
         return 'ecs_localfonts';
+    }
+
+    protected static function editOffline()
+    {
+        $oConfig = Registry::getConfig();
+        $filepath = $oConfig->getConfigParam('sShopDir') . 'offline.html';
+        $search = '<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400" rel="stylesheet" type="text/css">';
+        $replace = '';
+
+        try {
+            $offlinetext = file_get_contents($filepath);
+            $offlinetext = str_replace($search, $replace, $offlinetext);
+            if (file_exists($filepath) && file_put_contents($filepath, $offlinetext)) {
+                echo $filepath . ' edited.<br>';
+            }
+        } catch (\Exception $oException) {
+        }
     }
 
     protected static function editCss()
@@ -42,7 +58,7 @@ class Events
             $styletext = file_get_contents($cssfile);
             $styletext = str_replace($search, $replace, $styletext);
             if (file_exists($cssfile) && file_put_contents($cssfile, $styletext)) {
-                echo $cssfile . ' edited.';
+                echo $cssfile . ' edited.<br>';
             }
         } catch (\Exception $oException) {
         }
@@ -96,23 +112,16 @@ class Events
         }
     }
 
-    public static function regenViews()
-    {
-        $oMD = oxNew(DbMetaDataHandler::class);
-        $oMD->updateViews();
-    }
-
     public static function onActivate()
     {
         self::editcss();
+        self::editOffline();
         self::clearTmp();
-        self::regenViews();
     }
 
     public static function onDeactivate()
     {
         self::dropSql();
         self::clearTmp();
-        self::regenViews();
     }
 }

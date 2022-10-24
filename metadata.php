@@ -21,7 +21,7 @@ $aModule = [
     'title'         => '<strong style="color:#04B431;">e</strong><strong>ComStyle.de</strong>:  <i>LocalFonts</i>',
     'description'   => 'Google Fonts lokal einbinden',
     'thumbnail'     => 'ecs.png',
-    'version'       => '1.0.1',
+    'version'       => '1.0.2',
     'author'        => '<strong style="font-size: 17px;color:#04B431;">e</strong><strong style="font-size: 16px;">ComStyle.de</strong>',
     'email'         => 'info@ecomstyle.de',
     'url'           => 'https://ecomstyle.de',
