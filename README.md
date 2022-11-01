@@ -6,7 +6,7 @@ OXID eShop 6.1 - 6.4 (nur GPL - Versionen!)
 
 ### Features
 
-Bei Modulaktivierung werden folgende Aktionen durchgeführt:
+Zur Modulinstallation werden die Shop- und Wave-Theme-Dateien um folgende Aktionen gepatcht:
 
 -   Import der Google Font Raleway von fonts.googleapis.com entfernen.
 -   Google Font Raleway lokal einbinden.

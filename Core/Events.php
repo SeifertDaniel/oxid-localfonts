@@ -27,48 +27,6 @@ class Events
         return 'ecs_localfonts';
     }
 
-    protected static function editOffline()
-    {
-        $oConfig = Registry::getConfig();
-        $filepath = $oConfig->getConfigParam('sShopDir') . 'offline.html';
-        $search = '<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400" rel="stylesheet" type="text/css">';
-        $replace = '';
-
-        try {
-            $offlinetext = file_get_contents($filepath);
-            $offlinetext = str_replace($search, $replace, $offlinetext);
-            if (file_exists($filepath) && file_put_contents($filepath, $offlinetext)) {
-                echo $filepath . ' edited.<br>';
-            }
-        } catch (\Exception $oException) {
-        }
-    }
-
-    protected static function editCss()
-    {
-        $oConfig = Registry::getConfig();
-        $moduleurl = $oConfig->getShopUrl() . 'modules/ecs/LocalFonts/';
-        $srcdir = $oConfig->getResourcePath();
-        $cssfile = $srcdir . 'css/styles.min.css';
-        $localfonts = "@font-face{font-family:'Raleway';font-style:normal;font-weight:400;src:url('modules/ecs/LocalFonts/fonts/raleway-v28-latin-regular.eot');src:local(''),url('modules/ecs/LocalFonts/fonts/raleway-v28-latin-regular.eot?#iefix') format('embedded-opentype'),url('modules/ecs/LocalFonts/fonts/raleway-v28-latin-regular.woff2') format('woff2'),url('modules/ecs/LocalFonts/fonts/raleway-v28-latin-regular.woff') format('woff'),url('modules/ecs/LocalFonts/fonts/raleway-v28-latin-regular.ttf') format('truetype'),url('modules/ecs/LocalFonts/fonts/raleway-v28-latin-regular.svg#Raleway') format('svg')}";
-        $search = [
-            '@import url(https://fonts.googleapis.com/css?family=Raleway:200,400,600,700);', 
-            "@import url('https://fonts.googleapis.com/css?family=Raleway:200,400,600,700');", 
-            '@import url("https://fonts.googleapis.com/css?family=Raleway:200,400,600,700");', 
-            $localfonts
-        ];
-        $replace = $localfonts;
-
-        try {
-            $styletext = file_get_contents($cssfile);
-            $styletext = str_replace($search, $replace, $styletext);
-            if (file_exists($cssfile) && file_put_contents($cssfile, $styletext)) {
-                echo $cssfile . ' edited.<br>';
-            }
-        } catch (\Exception $oException) {
-        }
-    }
-
     public static function dropSql()
     {
         $aSql[] = 'DELETE FROM oxtplblocks WHERE OXMODULE= ' . \OxidEsales\Eshop\Core\DatabaseProvider::getDb()->quote(self::_moduleID()) . ';';
@@ -119,8 +77,6 @@ class Events
 
     public static function onActivate()
     {
-        self::editcss();
-        self::editOffline();
         self::clearTmp();
     }
 
