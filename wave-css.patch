@@ -1,0 +1,35 @@
+From 4be189f5769d4e22f539c5161040e24bcad92e46 Mon Sep 17 00:00:00 2001
+From: Daniel Seifert <ds@shopmodule.com>
+Date: Tue, 1 Nov 2022 15:04:21 +0100
+Subject: [PATCH 1/1] remove fonts.googleapis.com link from stylesheets
+
+---
+ out/wave/src/css/styles.css     | 3 ++-
+ out/wave/src/css/styles.min.css | 3 ++-
+ 2 files changed, 4 insertions(+), 2 deletions(-)
+
+diff --git a/out/wave/src/css/styles.css b/out/wave/src/css/styles.css
+index 433663af..e5c35abd 100644
+--- a/out/wave/src/css/styles.css
++++ b/out/wave/src/css/styles.css
+@@ -1,4 +1,5 @@
+-@import url("https://fonts.googleapis.com/css?family=Raleway:200,400,600,700");/**
++@font-face{font-family:'Raleway';font-style:normal;font-weight:400;src:url('../../../../modules/ecs/LocalFonts/fonts/raleway-v28-latin-regular.eot');src:local(''),url('../../../../modules/ecs/LocalFonts/fonts/raleway-v28-latin-regular.eot?#iefix') format('embedded-opentype'),url('../../../../modules/ecs/LocalFonts/fonts/raleway-v28-latin-regular.woff2') format('woff2'),url('../../../../modules/ecs/LocalFonts/fonts/raleway-v28-latin-regular.woff') format('woff'),url('../../../../modules/ecs/LocalFonts/fonts/raleway-v28-latin-regular.ttf') format('truetype'),url('../../../../modules/ecs/LocalFonts/fonts/raleway-v28-latin-regular.svg#Raleway') format('svg')}
++/**
+  * This file is part of OXID eSales Wave theme.
+  *
+  * OXID eSales Wave theme is free software: you can redistribute it and/or modify
+diff --git a/out/wave/src/css/styles.min.css b/out/wave/src/css/styles.min.css
+index d6e78bed..9a10337c 100644
+--- a/out/wave/src/css/styles.min.css
++++ b/out/wave/src/css/styles.min.css
+@@ -1,4 +1,5 @@
+-@import url(https://fonts.googleapis.com/css?family=Raleway:200,400,600,700);/*!
++@font-face{font-family:'Raleway';font-style:normal;font-weight:400;src:url('../../../../modules/ecs/LocalFonts/fonts/raleway-v28-latin-regular.eot');src:local(''),url('../../../../modules/ecs/LocalFonts/fonts/raleway-v28-latin-regular.eot?#iefix') format('embedded-opentype'),url('../../../../modules/ecs/LocalFonts/fonts/raleway-v28-latin-regular.woff2') format('woff2'),url('../../../../modules/ecs/LocalFonts/fonts/raleway-v28-latin-regular.woff') format('woff'),url('../../../../modules/ecs/LocalFonts/fonts/raleway-v28-latin-regular.ttf') format('truetype'),url('../../../../modules/ecs/LocalFonts/fonts/raleway-v28-latin-regular.svg#Raleway') format('svg')}
++/*!
+  * Bootstrap v4.3.1 (https://getbootstrap.com/)
+  * Copyright 2011-2019 The Bootstrap Authors
+  * Copyright 2011-2019 Twitter, Inc.
+-- 
+2.26.1.windows.1
+

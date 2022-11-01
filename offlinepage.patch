@@ -1,0 +1,24 @@
+From 434ea1b69edec09a0fa4c90558736bbcaa92a740 Mon Sep 17 00:00:00 2001
+From: Daniel Seifert <ds@shopmodule.com>
+Date: Tue, 1 Nov 2022 14:37:14 +0100
+Subject: [PATCH 1/1] remove fonts.googleapis.com link from offline page
+
+---
+ source/offline.html | 1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git a/source/offline.html b/source/offline.html
+index 49a813c65..48e700ce4 100644
+--- a/source/offline.html
++++ b/source/offline.html
+@@ -5,7 +5,6 @@
+     <meta name="robots" content="noindex, nofollow">
+     <meta http-equiv="refresh" content="10; URL=/index.php">
+     <title>Maintenance mode / Wartungsarbeiten</title>
+-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400" rel="stylesheet" type="text/css">
+     <style>
+         body {
+             font-family: "Source Sans Pro", sans-serif;
+-- 
+2.26.1.windows.1
+
