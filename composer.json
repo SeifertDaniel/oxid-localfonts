@@ -19,11 +19,15 @@
     ],
     "extra": {
         "oxideshop": {
+            "blacklist-filter": [
+                "patches/**/*.*"
+            ],
             "target-directory": "ecs/LocalFonts"
         }
     },
     "require": {
-        "oxid-esales/oxideshop-ce": ">=6.3 <6.11"
+        "oxid-esales/oxideshop-ce": ">=6.3 <6.11",
+        "cweagans/composer-patches": "*"
     },
     "autoload": {
         "psr-4": {

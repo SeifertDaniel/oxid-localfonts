@@ -50,8 +50,13 @@ class Events
         $moduleurl = $oConfig->getShopUrl() . 'modules/ecs/LocalFonts/';
         $srcdir = $oConfig->getResourcePath();
         $cssfile = $srcdir . 'css/styles.min.css';
-        $localfonts = "@font-face{font-family:'Raleway';font-style:normal;font-weight:400;src:url('" . $moduleurl . "fonts/raleway-v28-latin-regular.eot');src:local(''),url('" . $moduleurl . "fonts/raleway-v28-latin-regular.eot?#iefix') format('embedded-opentype'),url('" . $moduleurl . "fonts/raleway-v28-latin-regular.woff2') format('woff2'),url('" . $moduleurl . "fonts/raleway-v28-latin-regular.woff') format('woff'),url('" . $moduleurl . "fonts/raleway-v28-latin-regular.ttf') format('truetype'),url('" . $moduleurl . "fonts/raleway-v28-latin-regular.svg#Raleway') format('svg')}";
-        $search = ['@import url(https://fonts.googleapis.com/css?family=Raleway:200,400,600,700);', "@import url('https://fonts.googleapis.com/css?family=Raleway:200,400,600,700');", $localfonts];
+        $localfonts = "@font-face{font-family:'Raleway';font-style:normal;font-weight:400;src:url('modules/ecs/LocalFonts/fonts/raleway-v28-latin-regular.eot');src:local(''),url('modules/ecs/LocalFonts/fonts/raleway-v28-latin-regular.eot?#iefix') format('embedded-opentype'),url('modules/ecs/LocalFonts/fonts/raleway-v28-latin-regular.woff2') format('woff2'),url('modules/ecs/LocalFonts/fonts/raleway-v28-latin-regular.woff') format('woff'),url('modules/ecs/LocalFonts/fonts/raleway-v28-latin-regular.ttf') format('truetype'),url('modules/ecs/LocalFonts/fonts/raleway-v28-latin-regular.svg#Raleway') format('svg')}";
+        $search = [
+            '@import url(https://fonts.googleapis.com/css?family=Raleway:200,400,600,700);', 
+            "@import url('https://fonts.googleapis.com/css?family=Raleway:200,400,600,700');", 
+            '@import url("https://fonts.googleapis.com/css?family=Raleway:200,400,600,700");', 
+            $localfonts
+        ];
         $replace = $localfonts;
 
         try {

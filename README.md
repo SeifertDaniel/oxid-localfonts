@@ -14,7 +14,15 @@ Bei Modulaktivierung werden folgende Aktionen durchgeführt:
 
 ### Installation
 
-`composer require ecs/localfonts`
+```
+composer config extra.enable-patching true
+
+composer config --json extra.patches.oxid-esales/oxideshop-ce '{"remove fonts.googleapis.com link from offline page" : "https://raw.githubusercontent.com/SeifertDaniel/oxid-localfonts/patches/offlinepage.patch"}'
+
+composer config --json extra.patches.oxid-esales/wave-theme '{"remove fonts.googleapis.com link from stylesheets" : "https://raw.githubusercontent.com/SeifertDaniel/oxid-localfonts/patches/wave-css.patch"}'
+
+composer require ecs/localfonts
+```
 
 ### License
 
